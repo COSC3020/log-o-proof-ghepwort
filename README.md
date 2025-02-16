@@ -14,7 +14,9 @@ $T(n) \in O(f(n)) \iff \exists c, n_0: T(n) \leq c \cdot f(n) \forall n \geq n_0
 
 
 ## Answers
-To prove that $O(log_2n)$ is the same as $O(log_5n)$ we must prove that $log_2n$ and $log_5n$ are the same asymptoticly. In asymptotic analysis, constant factors do not change the big-O classification, so functions that differ only by a constant factor belong to the same big-O class. This means that at large values, if there is some constant $c$ where $log_5n=c \cdot log_2n$ then asymptoticaly $O(log_2n)$ is the same as $O(log_5n)$. The change of base formula for logarithms is: $log_ba=\frac{log_ca}{log_cb}$ or $log_cb=\frac{log_ca}{log_ba}$. By rearanging the previous equation we get $c=\frac{log_5n}{log_2n}=log_52$ which is a constant. As we have proven $log_5n$ and $log_2n$ differ by a constant factor, then asymptoticly $O(log_2n)$ and $O(log_5n)$ must be the same.
+To prove that $O(log_2n)$ and $0(log_5n)$ are asymptotically the same, we need to prove that they are the same as $n\rightarrow\infin$. Using the change of base formula $\log_ba=\frac{\log_ca}{\log_cb}$, we can compare logarithms with different bases in terms of logarithms with a common base. In this case applying the formula we get $\frac{log_2n}{log_5n}=log_25$, but this can be done with logarithms with any base. 
+
+Since constants do not affect the asymptotic growth in Big-O notation, we can conclude that $log_2n$ and $log_5n$ grow at the same rate as $n\rightarrow\infin$. Therefore, in Big-O notation, we disregard the constant factors and conclude that $O(log_2n) = O(log_5n)$.
 
 
 ## Sources
